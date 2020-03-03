@@ -17,7 +17,7 @@ class Ticket
     @price
   end
 
-  def set_price(amount)
+  def price=(amount)
     @price = amount
   end
 
@@ -31,12 +31,12 @@ class Ticket
 end
 
 th = Ticket.new("Town Hall", "2013-11-12")
-th.set_price(63.00)
+th.price=(63.00)
 cc = Ticket.new("Convention Center", "2014-12-13")
-cc.set_price(64.00)
+cc.price= 64.00
 puts "We've created two tickets."
 puts "The first is for a #{th.venue} event on #{th.date}"
 puts "The ticket costs $#{"%.2f" % th.price}"
-th.set_price(72.50)
+th.price=(72.50)
 puts "Whoops -- it just went up. It now costs $#{"%.2f" % th.price}."
 puts "The second is for an event on #{cc.venue} event on #{cc.date}"
