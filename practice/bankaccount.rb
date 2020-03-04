@@ -4,12 +4,13 @@ module InterestBearing
   end
 end
 class BankAccount
-  include InterestBearing
+
   def calculate_interest
     puts "Placeholder! We're in class BankAccount."
     puts "And We're overriding the calculate_interest method ..."
     puts "which was defined in the InterestBearing module."
   end
+  include InterestBearing
 end
 
 account = BankAccount.new
