@@ -58,6 +58,12 @@ j = Person.new("John")
 p = Person.new("Paul")
 g = Person.new("George")
 r = Person.new("Ringo")
+e = Person.new("Eric B.")
+
+e.has_friend(r)
+e.has_hobby("cycling")
+r.has_hobby("drums")
+
 j.has_friend(p)
 j.has_friend(g)
 g.has_friend(p)
@@ -68,4 +74,7 @@ Person.all_with_friends(p).each do |person|
 end
 Person.all_with_hobbies("rings").each do |person|
   puts "#{person.name} is into rings"
+end
+Person.all_with_hobbies("cycling").each do |person|
+  puts "#{person.name} is into cycling"
 end
