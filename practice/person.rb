@@ -1,6 +1,7 @@
 class Person
   PEOPLE = []
   attr_reader :name, :hobbies, :friends
+  attr_accessor :first_name, :middle_name, :last_name
   def initialize(name)
     @name = name
     @hobbies = []
@@ -42,6 +43,12 @@ class Person
     puts "Returning the person's name..."
     @name
   end
+
+  def whole_name
+    n = first_name + " "
+    n << "#{middle_name} " if middle_name
+    n << last_name
+  end
 end
 
 class Rubyist < Person
@@ -78,3 +85,9 @@ end
 Person.all_with_hobbies("cycling").each do |person|
   puts "#{person.name} is into cycling"
 end
+
+david.first_name = "David"
+david.last_name = "Black"
+puts "\nDavid's whole name: #{david.whole_name}"
+david.middle_name = "Alan"
+puts "David's whole name: #{david.whole_name}"
