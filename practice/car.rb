@@ -36,12 +36,10 @@ end
 
 Car.add_make("Honda")
 Car.add_make("Ford")
-Car.add_make("Hybrid")
+
 h = Car.new("Honda")
 f = Car.new("Ford")
 h2 = Car.new("Honda")
-
-
 
 # x = Car.new("Brand X")
 
