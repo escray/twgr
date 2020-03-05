@@ -6,3 +6,7 @@ class C
 end
 c = C.new
 c.examine_global
+
+puts $0
+puts $:
+puts $$
