@@ -1,3 +1,6 @@
+class InvalidLineError < StandardError
+end
+
 def divide_by_user_input
   print "Enter a number: "
   n = gets.to_i
@@ -41,8 +44,9 @@ def line_from_file(filename, substring)
   fh = File.open(filename)
   begin
     line = fh.gets
-    raise ArgumentError unless line.include?(substring)
-  rescue ArgumentError
+    raise InvalidLineError unless line.include?(substring)
+    return line
+  rescue InvalidLineError
     puts "Invalid line!"
     raise
   ensure
@@ -50,5 +54,17 @@ def line_from_file(filename, substring)
   end
   return line
 end
+
+class MyNewException < Exception
+end
+
+begin
+  puts "About to raise exception..."
+  raise MyNewException
+rescue MyNewException => e
+  puts "Just raised an exception: #{e}"
+end
+
+
 
 line_from_file("/Users/escray/Study/professional/SourceCode/Ruby/twgr/practice/rescue.rb", "den")
