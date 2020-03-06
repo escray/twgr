@@ -34,13 +34,13 @@ class Ticket
   end
 
   def ===(other_ticket)
-    self.venue == other_ticket.venue
+    self.date == other_ticket.date
   end
 end
 
 th = Ticket.new("Town Hall", "2013-11-12")
-to = Ticket.new("Town Hall", "08/09/18")
-tw = Ticket.new("Town Hall", "11/12/13")
+to = Ticket.new("Town Hall", "2013-11-12")
+tw = Ticket.new("Town Hall", "12/11/13")
 cc = Ticket.new("Convention Center", "2014-12-13")
 fg = Ticket.new("Fairgrounds", "2015-10-11")
 
@@ -58,11 +58,11 @@ puts "th is for an event at: #{th.venue}."
 
 case th
 when tw
-  puts "Same location as tw!"
+  puts "Same date as tw!"
 when to
-  puts "Same location as to!"
+  puts "Same date as to!"
 when cc
-  puts "Same location as cc!"
+  puts "Same date as cc!"
 else
   puts "No match."
 end
