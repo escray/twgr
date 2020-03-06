@@ -48,8 +48,11 @@ def line_from_file(filename, substring)
     line = fh.gets
     raise TextHandler::InvalidLineError unless line.include?(substring)
     return line
-  rescue TextHandler::InvalidLineError
+  rescue TextHandler::InvalidLineError => e
     puts "Invalid line!"
+    puts e
+    puts e.backtrace
+    puts e.message
     raise
   ensure
     fh.close
