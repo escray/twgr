@@ -34,5 +34,21 @@ end
 # rescue
 #   puts "Couldn't open your file!"
 # end
-divide_by_user_input
-open_user_file
+# divide_by_user_input
+# open_user_file
+
+def line_from_file(filename, substring)
+  fh = File.open(filename)
+  begin
+    line = fh.gets
+    raise ArgumentError unless line.include?(substring)
+  rescue ArgumentError
+    puts "Invalid line!"
+    raise
+  ensure
+    fh.close
+  end
+  return line
+end
+
+line_from_file("/Users/escray/Study/professional/SourceCode/Ruby/twgr/practice/rescue.rb", "den")
