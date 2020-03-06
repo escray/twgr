@@ -1,4 +1,6 @@
-class InvalidLineError < StandardError
+module TextHandler
+  class InvalidLineError < StandardError
+  end
 end
 
 def divide_by_user_input
@@ -44,9 +46,9 @@ def line_from_file(filename, substring)
   fh = File.open(filename)
   begin
     line = fh.gets
-    raise InvalidLineError unless line.include?(substring)
+    raise TextHandler::InvalidLineError unless line.include?(substring)
     return line
-  rescue InvalidLineError
+  rescue TextHandler::InvalidLineError
     puts "Invalid line!"
     raise
   ensure
