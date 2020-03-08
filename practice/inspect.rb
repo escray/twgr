@@ -16,3 +16,7 @@ end
 
 names = ["David", "Black"]
 puts combine_names(*names)
+
+print "Enter a number:"
+n = gets.chomp
+puts n * 100
