@@ -35,4 +35,3 @@ array = []
 array.concat(david)
 puts "david is named " + david + "."
 p array
-p david.to_a
