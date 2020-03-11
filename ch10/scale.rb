@@ -1,4 +1,4 @@
-module Music
+uodule Music
   class Scale
     NOTES = %w(c c# d d# e f f# g a a# b)
     def play
