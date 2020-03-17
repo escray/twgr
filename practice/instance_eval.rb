@@ -40,10 +40,6 @@ class C
 end
 C.class_eval { puts var }
 
-C.class_eval do
-  def talk
-    puts var
-  end
-end
-# C.new.talk
+C.class_eval { define_method('talk') { puts var } }
+C.new.talk
 # NameError
